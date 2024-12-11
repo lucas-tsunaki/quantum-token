@@ -3,14 +3,14 @@
 This repository contains all Qiskit implementations and data analysis for the experiments shown in _ , in addition to a GUI application for visualizing and calculating the acceptance fraction of an arbitrary quantum token hardware.
 
 The repository is organized as follows:
-- [exp_data](https://github.com/lucas-tsunaki/quantum-token/exp_data) - contains all experimental data obtained in the IBMQ.
-- [figures](https://github.com/lucas-tsunaki/quantum-token/figures) - contains all the figures with results, as shown in the paper.
-- [sim_results](https://github.com/lucas-tsunaki/quantum-token/sim_results) - contains the simulation scripts and results of the forger acceptance fractions for different normalized contrasts. Due to their high computational costs, they are better run as .py scripts rather than in notebooks .ipynb.
-- [01_std_dev](https://github.com/lucas-tsunaki/quantum-token/01_std_dev.ipynb) - the expectation value of the $\hat{N}$ operator and its associated standard deviation $\sigma_N$ are analytically calculated and measured in the IBMQ.
-- [02_nb](https://github.com/lucas-tsunaki/quantum-token/02_nb.ipynb) - the bank self-acceptance fractions are measured and analysed.
-- [03_na](https://github.com/lucas-tsunaki/quantum-token/03_na.ipynb) - the forger measurement attack on the bank token is performed and visualized.
-- [04_nf](https://github.com/lucas-tsunaki/quantum-token/04_nf.ipynb) - the forger uses its measurements results from the attack to forge a fake token and pass to the bank, resulting in certain acceptance probability of this forged token.
-- [GUI_qtoken](https://github.com/lucas-tsunaki/quantum-token/GUI_qtoken.py) - GUI application where all results can be calculated and visualized for user defined parameters of the token hardware.
+- [exp_data](https://github.com/lucas-tsunaki/quantum-token/tree/main/exp_data) - contains all experimental data obtained in the IBMQ.
+- [figures](https://github.com/lucas-tsunaki/quantum-token/tree/main/figures) - contains all the figures with results, as shown in the paper.
+- [sim_results](https://github.com/lucas-tsunaki/quantum-token/tree/main/sim_results) - contains the simulation scripts and results of the forger acceptance fractions for different normalized contrasts. Due to their high computational costs, they are better run as .py scripts rather than in notebooks .ipynb.
+- [01_std_dev](https://github.com/lucas-tsunaki/quantum-token/tree/main/01_std_dev.ipynb) - the expectation value of the $\hat{N}$ operator and its associated standard deviation $\sigma_N$ are analytically calculated and measured in the IBMQ.
+- [02_nb](https://github.com/lucas-tsunaki/quantum-token/tree/main/02_nb.ipynb) - the bank self-acceptance fractions are measured and analysed.
+- [03_na](https://github.com/lucas-tsunaki/quantum-token/tree/main/03_na.ipynb) - the forger measurement attack on the bank token is performed and visualized.
+- [04_nf](https://github.com/lucas-tsunaki/quantum-token/tree/main/04_nf.ipynb) - the forger uses its measurements results from the attack to forge a fake token and pass to the bank, resulting in certain acceptance probability of this forged token.
+- [GUI_qtoken](https://github.com/lucas-tsunaki/quantum-token/tree/main/GUI_qtoken.py) - GUI application where all results can be calculated and visualized for user defined parameters of the token hardware.
 
 ## Installing and Running the GUI Application
 
