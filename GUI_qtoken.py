@@ -4,6 +4,7 @@
 This file contains a GUI application for interactive calculating and plotting the acceptance probability of a quantum token,
 the angle dependence of the fraction of qubits measured in the |0> state and the total noise for a given theta.
 The desidered parameters can be input and the plots will be updated in real time.
+This is part of 'Ensemble-Based Quantum-Token Protocol Benchmarked on IBM Quantum Processors' arXiv:2412.08530 (2024).
 
 Version: 1.0
 Date: 12.12.2024
@@ -387,6 +388,8 @@ class InteractivePlotApp(QMainWindow):
         self.cbar = self.fig.colorbar(cm, ax=self.ax)
         self.cbar.set_label(r"n")
 
+        self.fig.text(0.9, 0.9, 'arXiv:2412.08530[quant-ph]', ha='right', va='top', color='gray', alpha=0.5, fontsize=3, transform=self.fig.transFigure)
+
         self.canvas.draw()
 
     def update_p_plot(self):
@@ -420,6 +423,8 @@ class InteractivePlotApp(QMainWindow):
         self.calculate_p(nb_mean, sigmab, nf_shape, nf_loc, nf_scale, nT)
         self.ax.set_title(f"Bank Acceptance Probability: {self.pb:.5f} \n Forger Acceptance Probability: {self.pf:.5f}")
 
+        self.fig.text(0.9, 0.9, 'arXiv:2412.08530[quant-ph]', ha='right', va='top', color='gray', alpha=0.5, fontsize=3, transform=self.fig.transFigure)
+
         self.canvas.draw()
 
     def update_sigman_plot(self):
@@ -440,6 +445,8 @@ class InteractivePlotApp(QMainWindow):
         self.ax.set_ylabel(r"$\sigma_n$")
         self.ax.set_title(fr"Total Noise $\sigma_n(\theta)$, $c=${np.abs(N0-N1)/(N0+N1):.5f}")
         self.ax.set_xlim(0, 180)
+
+        self.fig.text(0.9, 0.9, 'arXiv:2412.08530[quant-ph]', ha='right', va='top', color='gray', alpha=0.5, fontsize=3, transform=self.fig.transFigure)
 
         self.canvas.draw()
 

@@ -1,6 +1,6 @@
 # Ensemble-Based Quantum-Token Protocol Benchmarked on IBMQ
 
-This repository contains all Qiskit implementations and data analysis for the experiments shown in _ , in addition to a GUI application for visualizing and calculating the acceptance fraction of an arbitrary quantum token hardware.
+This repository contains all Qiskit implementations and data analysis for the experiments shown in 'Ensemble-Based Quantum-Token Protocol Benchmarked on IBM Quantum Processors' arXiv:2412.08530 (2024), in addition to a GUI application for visualizing and calculating the acceptance fraction of an arbitrary quantum token hardware.
 
 The repository is organized as follows:
 - [exp_data](https://github.com/lucas-tsunaki/quantum-token/tree/main/exp_data) - contains all experimental data obtained in the IBMQ.
@@ -29,7 +29,7 @@ python GUI_qtoken.py
 
 The GUI presents three tabs. The first is for calculating the acceptance probability $p$ of the bank and forged tokens given the necessary parameters for the two distributions and the acceptance threshold. The second tab plots the solutions of $n$  as function of the bank angles $\theta_b$ and $\phi_b$, for user defined attacker angles, as in Eq. 4 of the paper. Finally the third tab gives the $\hat{N}$ operator uncertainty $\sigma_N$ for given $N_0$, $N_1$ and $\sigma_{exp}$. The GUI layout is shown below.
 
-![Screenshot of the gui](./figures/GUI_v1.0.png "Screenshot")
+![Screenshot of the gui](./figures/GUI_v1.1.png "Screenshot")
 
 ## Qiskit Installation for Running Experiments
 
