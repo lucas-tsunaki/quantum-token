@@ -1,3 +1,9 @@
+"""
+L.Tsunaki et al., 'Ensemble-Based Quantum-Token Protocol Benchmarked on IBM Quantum Processors', arXiv:2412.08530 (2024).
+
+This script calculates the average number of qubits that the bank from a forged token as function of theta in IBMQ Kyiv, Sherbrooke Brisbane.
+"""
+
 import os
 os.environ["OMP_NUM_THREADS"] = "40"
 
@@ -77,13 +83,15 @@ def calculate_phi_f(na, theta_a, phi_a, c):
 thetab = np.linspace(1e-3, np.pi-1e-3, 100)
 c_kyiv = 0.9503942133692314
 c_sherbrooke = 0.9859975714946958
-nf = np.empty((2, len(thetab)), dtype=float)
+c_brisbane = 0.843234615325578
+nf = np.empty((3, len(thetab)), dtype=float)
 avg=100000
 
 for itr_zb in range(len(thetab)):
 
     nf_phib_calc_k = 0
-    nf_phib_calc_s = 0      
+    nf_phib_calc_s = 0
+    nf_phib_calc_b = 0      
     for itr_phib in range(avg):
         phi_b = np.random.uniform(0, 2*np.pi)
         theta_a = np.random.uniform(0, np.pi)
@@ -91,15 +99,21 @@ for itr_zb in range(len(thetab)):
 
         na_k = na_analytical(thetab[itr_zb], theta_a, phi_b, phi_a, c_kyiv)
         na_s = na_analytical(thetab[itr_zb], theta_a, phi_b, phi_a, c_sherbrooke)
+        na_b = na_analytical(thetab[itr_zb], theta_a, phi_b, phi_a, c_brisbane)
 
         theta_f_k, phi_f_k = calculate_phi_f(na_k, theta_a, phi_a, c_kyiv)
         theta_f_s, phi_f_s = calculate_phi_f(na_s, theta_a, phi_a, c_sherbrooke)
+        theta_f_b, phi_f_b = calculate_phi_f(na_b, theta_a, phi_a, c_brisbane)
         nf_phib_calc_k += na_analytical(theta_f_k, thetab[itr_zb], phi_f_k, phi_b, c_kyiv)
         nf_phib_calc_s += na_analytical(theta_f_s, thetab[itr_zb], phi_f_s, phi_b, c_sherbrooke)
+        nf_phib_calc_b += na_analytical(theta_f_s, thetab[itr_zb], phi_f_s, phi_b, c_brisbane)
 
     nf[0, itr_zb] = nf_phib_calc_k/avg
     nf[1, itr_zb] = nf_phib_calc_s/avg
+    nf[2, itr_zb] = nf_phib_calc_b/avg
 
     print(f'{itr_zb+1}/{len(thetab)}')
 
-np.savetxt('./nf_average_kyiv_sherbrooke.txt', nf, delimiter='\t')
+np.savetxt('./nf_average_kyiv.txt', nf[0], delimiter='\t')
+np.savetxt('./nf_average_sherbrooke.txt', nf[1], delimiter='\t')
+np.savetxt('./nf_average_brisbane.txt', nf[2], delimiter='\t')

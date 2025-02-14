@@ -1,4 +1,11 @@
+"""
+L.Tsunaki et al., 'Ensemble-Based Quantum-Token Protocol Benchmarked on IBM Quantum Processors', arXiv:2412.08530 (2024).
+
+This script calculates the average number of qubits that the bank from a forged token as a function of the IBMQ contrast.
+"""
+
 import os
+
 os.environ["OMP_NUM_THREADS"] = "32"
 
 import numpy as np
